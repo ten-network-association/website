@@ -1,0 +1,18 @@
+title: TEN Network Association — Notices
+description: Official notices and announcements published by TEN Network Association, a Swiss association.
+lang: en
+
+# Stable, predictable permalinks for legal references.
+# A notice in _posts/2025-11-04-board-resolution.md is served at /notices/2025-11-04-board-resolution/
+permalink: /notices/:year-:month-:day-:title/
+
+# Keep posts ordered newest-first on the index page (default behaviour, made explicit).
+future: false
+
+# Default front matter so authors don't have to repeat `layout: notice`.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: notice

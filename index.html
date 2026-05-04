@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<section class="intro">
+  <h1>Public Notices</h1>
+  <p>This page is the official channel for notices, announcements, and resolutions published by TEN Network Association, a Swiss association (Verein) seated in [Canton], Switzerland. Documents listed below are maintained for the record.</p>
+</section>
+
+{% if site.posts.size == 0 %}
+  <p style="color: var(--muted); font-family: var(--sans); font-size: 14px;">No notices have been published yet.</p>
+{% else %}
+<ol class="notices">
+  {% for post in site.posts %}
+  <li>
+    <a class="notice-link" href="{{ post.url | relative_url }}">
+      <div class="meta">
+        {{ post.date | date: "%d %b %Y" }}
+        {% if post.ref %}<span class="ref">{{ post.ref }}</span>{% endif %}
+      </div>
+      <div>
+        <div class="title">
+          {% if post.category %}<span class="tag {{ post.category | downcase }}">{{ post.category }}</span>{% endif %}
+          {{ post.title }}
+        </div>
+        {% if post.summary %}<p class="summary">{{ post.summary }}</p>{% endif %}
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
