@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: site.description }}">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-head">
+      <a href="{{ '/' | relative_url }}" class="brand">
+        TEN Network Association
+        <span class="brand-sub">Official Notices &amp; Announcements</span>
+      </a>
+      <nav>
+        {% if page.layout == "notice" %}
+          <a href="{{ '/' | relative_url }}">All notices</a>
+        {% endif %}
+      </nav>
+    </header>
+
+    {{ content }}
+
+    <footer class="site-foot">
+      <p><strong>TEN Network Association</strong> — a Swiss association (Verein) under Art. 60 ff. of the Swiss Civil Code.</p>
+      <p>Registered office: [Street, Postal Code, City], Switzerland</p>
+      <p>Contact: <a href="mailto:notices@example.org">notices@example.org</a></p>
+      <p style="margin-top:12px">This page constitutes the official notice channel of the Association. Notices are retained indefinitely for the record.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
